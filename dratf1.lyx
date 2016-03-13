@@ -301,7 +301,7 @@ It deals with quantifying and recognizing impact and contribution through
 \end_inset
 
  In this paper we look into analysis of scientific contributions in peer-reviewe
-d publications using their citation and co-citation networks.
+d publications using their citation, co-citation and co-authorship networks.
 \end_layout
 
 \begin_layout Section
@@ -336,8 +336,38 @@ Citation count is the sum of all published citations to a scientific paper.
 PaperRank
 \end_layout
 
+\begin_layout Standard
+The PageRank algorithm has the problem of nodes with no inbound edges causing
+ it to have no solution.
+ To solve this problem the algorithm is modified to assign rank of 1 to
+ all initial nodes and reset it to zero after computation.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-2"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 h-index
+\end_layout
+
+\begin_layout Standard
+An author metric whose value is the maximal number 
+\begin_inset Formula $h$
+\end_inset
+
+ such that the author has at least 
+\begin_inset Formula $h$
+\end_inset
+
+ papers with at least 
+\begin_inset Formula $h$
+\end_inset
+
+ citations.
 \end_layout
 
 \begin_layout Standard
@@ -372,7 +402,35 @@ h-index illustrated
 \end_layout
 
 \begin_layout Subsection
-PaperRank-Hirsch
+PaperRank-Hirsch index
+\end_layout
+
+\begin_layout Standard
+This is a proposed alternative to h-index which uses the calculated PaperRanks.
+ The PaperRanks are normalized to represent more meaningful quantities,
+ namely the most probable number of citations which the node might receive,
+ the 
+\begin_inset Formula $Q$
+\end_inset
+
+-value.
+ The index is then defined as the integer number 
+\begin_inset Formula $h$
+\end_inset
+
+ such that an author has at least 
+\begin_inset Formula $h$
+\end_inset
+
+ papers with 
+\begin_inset Formula $Q$
+\end_inset
+
+-value greater than or equal to 
+\begin_inset Formula $h$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -406,7 +464,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename corank-linkcount.png
-	scale 60
+	scale 70
 
 \end_inset
 
@@ -435,204 +493,50 @@ key "key-1"
 \end_layout
 
 \begin_layout Subsection
-Betweenness centrality
+Betweeness centrality
 \end_layout
 
 \begin_layout Subsection
-Closeness centrality
-\end_layout
-
-\begin_layout Section
-Methodology
-\end_layout
-
-\begin_layout Theorem
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Theorem name
-\end_layout
-
-\end_inset
-
-For a named theorem or theorem-like environment you need to insert the name
- through 
-\family sans
-Insert\SpecialChar \menuseparator
-Short Title
-\family default
-, as done here.
-\end_layout
-
-\begin_layout Lemma
-If you don't want a theorem or lemma name don't add one.
-\end_layout
-
-\begin_layout Proof
-And here's the proof!
-\end_layout
-
-\begin_layout Section
-Results
+Closeness centrality on co-authorship networks
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement htbp
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-
-\family sans
-A single column figure goes here
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Captions go 
-\emph on
-under
-\emph default
- the figure
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float table
-placement htbp
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Table captions go 
-\emph on
-above
-\emph default
- the table
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="0pt">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-delete
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-this
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-example
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-table
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Conclusions
+Closeness centrality (Freeman, 1979) emphasizes the distance of a vertex
+ to all others in the network through the geodesic distance from each vertex
+ to all others.
+ It is a measure of how long it will take for information to spread from
+ a particular node (Yin et al., 2006).
 \end_layout
 
 \begin_layout Standard
-bla bla
-\end_layout
-
-\begin_layout Appendices
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Don't add text here!
-\end_layout
+\begin_inset Formula 
+\[
+C_{c}(n_{t})=\sum_{i=1}^{N}\frac{1}{d(n_{i},n_{j})}
+\]
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-First appendix
 \end_layout
 
 \begin_layout Standard
-Citation: 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "IEEEexample:beebe_archive"
-
+Where 
+\begin_inset Formula $d(n_{i},n_{j})$
 \end_inset
 
+ is the distance from node 
+\begin_inset Formula $i$
+\end_inset
 
-\end_layout
+ to node 
+\begin_inset Formula $j$
+\end_inset
 
-\begin_layout Section
-Second appendix
-\end_layout
+ and 
+\begin_inset Formula $C_{c}$
+\end_inset
 
-\begin_layout Section*
-Acknowlegment
+ is the closeness centrality.
 \end_layout
 
 \begin_layout Bibliography
@@ -644,6 +548,42 @@ key "key-1"
 
 DAVID C TARRANT (2011) "A Study of Early Indication Citation Metrics ",
  University of Southampton, Electronics and Computer Science, PhD Thesis.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Mikalai Krapivin, Maurizio Marchese and Fabio Casati 
+\begin_inset Quotes erd
+\end_inset
+
+Exploring and Understanding Scientific Metrics in Citation Networks
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+Erjia Yan, Ying Ding,
+\begin_inset CommandInset href
+LatexCommand href
+name " “Applying centrality measures to impact analysis: A coauthorship network analysis”"
+target "http://arxiv.org/pdf/1012.4862.pdf"
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -664,84 +604,10 @@ phy entries embedded in the LaTeX-file.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-bibfiles "IEEEabrv,IEEEexample"
-options "IEEEtran"
-
+\begin_inset Formula $ $
 \end_inset
 
 
-\end_layout
-
-\begin_layout Biography
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "1in"
-special "none"
-height "1.25in"
-height_special "none"
-status open
-
-\begin_layout Plain Layout
-Replace this box by an image with a width of 1
-\begin_inset space \thinspace{}
-\end_inset
-
-in and a height of 1.25
-\begin_inset space \thinspace{}
-\end_inset
-
-in!
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Your Name
-\end_layout
-
-\end_inset
-
- All about you and the what your interests are.
-\end_layout
-
-\begin_layout --Separator--
-
-\end_layout
-
-\begin_layout Biography without photo
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Coauthor
-\end_layout
-
-\end_inset
-
-Same again for the co-author, but without photo
 \end_layout
 
 \end_body
