@@ -174,26 +174,10 @@ Gundimeda
 
 
 \begin_inset Flex Author Affiliation
-status collapsed
+status open
 
 \begin_layout Plain Layout
-School of Electrical and
-\begin_inset Newline newline
-\end_inset
-
-Computer Engineering
-\begin_inset Newline newline
-\end_inset
-
-Institute of Technology
-\begin_inset Newline newline
-\end_inset
-
-99999 Testcity
-\begin_inset Newline newline
-\end_inset
-
-Email: test@test.tes
+Indian Institute of Technology Madras
 \end_layout
 
 \end_inset
@@ -227,292 +211,10 @@ Rohit Reddy
 
 
 \begin_inset Flex Author Affiliation
-status collapsed
-
-\begin_layout Plain Layout
-Ecole Superieure
-\begin_inset Newline newline
-\end_inset
-
-Nantes, France
-\begin_inset Newline newline
-\end_inset
-
-Email: second@second.fr
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-and 
-\end_layout
-
-\end_inset
-
-
-\begin_inset Flex Author Name
-status collapsed
-
-\begin_layout Plain Layout
-Third
-\begin_inset space ~
-\end_inset
-
-Name
-\begin_inset Newline newline
-\end_inset
-
-and Fourth
-\begin_inset space ~
-\end_inset
-
-Name
-\end_layout
-
-\end_inset
-
-
-\begin_inset Flex Author Affiliation
-status collapsed
-
-\begin_layout Plain Layout
-Star Academy
-\begin_inset Newline newline
-\end_inset
-
-San Francisco, California 99999-9999
-\begin_inset Newline newline
-\end_inset
-
-Telephone: (800) 555--5555
-\begin_inset Newline newline
-\end_inset
-
-Fax: (888) 555--5555
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Author
-\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-for more than 3
-\begin_inset space ~
-\end_inset
-
-affiliations use this way: 
-\end_layout
-
-\end_inset
-
-
-\begin_inset Flex Author Name
-status collapsed
-
-\begin_layout Plain Layout
-Your
-\begin_inset space ~
-\end_inset
-
-Name
-\begin_inset Flex Author Mark
-status open
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-
-, Second
-\begin_inset space ~
-\end_inset
-
-Name
-\begin_inset Flex Author Mark
-status open
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-
-, Third
-\begin_inset space ~
-\end_inset
-
-Name
-\begin_inset Flex Author Mark
-status open
-
-\begin_layout Plain Layout
-3
-\end_layout
-
-\end_inset
-
-, Fourth
-\begin_inset space ~
-\end_inset
-
-Name
-\begin_inset Flex Author Mark
-status open
-
-\begin_layout Plain Layout
-3
-\end_layout
-
-\end_inset
-
- and Fifth
-\begin_inset space ~
-\end_inset
-
-Name
-\begin_inset Flex Author Mark
-status open
-
-\begin_layout Plain Layout
-4
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Flex Author Affiliation
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Flex Author Mark
-status open
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-
-School of Electrical and
-\begin_inset Newline newline
-\end_inset
-
-Computer Engineering
-\begin_inset Newline newline
-\end_inset
-
-Institute of Technology
-\begin_inset Newline newline
-\end_inset
-
-99999 Testcity
-\begin_inset Newline newline
-\end_inset
-
-Email: test@test.tes
-\end_layout
-
-\end_inset
-
-
-\begin_inset Flex Author Affiliation
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Flex Author Mark
-status open
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-
-Ecole Superieure
-\begin_inset Newline newline
-\end_inset
-
-Nantes, France
-\begin_inset Newline newline
-\end_inset
-
-Email: second@second.fr
-\end_layout
-
-\end_inset
-
-
-\begin_inset Flex Author Affiliation
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Flex Author Mark
-status open
-
-\begin_layout Plain Layout
-3
-\end_layout
-
-\end_inset
-
-Star Academy
-\begin_inset Newline newline
-\end_inset
-
-San Francisco, California 99999-9999
-\begin_inset Newline newline
-\end_inset
-
-Telephone: (800) 555--5555
-\begin_inset Newline newline
-\end_inset
-
-Fax: (888) 555--5555
-\end_layout
-
-\end_inset
-
-
-\begin_inset Flex Author Affiliation
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Flex Author Mark
-status open
-
-\begin_layout Plain Layout
-4
-\end_layout
-
-\end_inset
-
-Rückwärts GmbH
-\begin_inset Newline newline
-\end_inset
-
-Niemandsweg 73
-\begin_inset Newline newline
-\end_inset
-
-99999 Musterstadt, Germany
+Indian Institute of Technology Madras
 \end_layout
 
 \end_inset
@@ -585,8 +287,21 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Here is the text text text text text text text text text text text text
- text text text text.
+Scientometrics deals with the measuring and analysing science, technology
+ and innovation.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+It deals with quantifying and recognizing impact and contribution through
+ various means.
+\end_layout
+
+\end_inset
+
+ In this paper we look into analysis of scientific contributions in peer-reviewe
+d publications using their citation and co-citation networks.
 \end_layout
 
 \begin_layout Section
@@ -594,15 +309,137 @@ Previous Work
 \end_layout
 
 \begin_layout Standard
-text text text text text text text text text text text text text text text
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Something here about how many papers we reviewed and how many of them contained
+ useful information.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-subsection
+Citation count
+\end_layout
+
+\begin_layout Standard
+Citation count is the sum of all published citations to a scientific paper.
+ This is the most widely used measure of impact, and is the standard metric
+ against which all of the others are compared.
 \end_layout
 
 \begin_layout Subsection
-another subsection
+PaperRank
+\end_layout
+
+\begin_layout Subsection
+h-index
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hindex.png
+	scale 90
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+h-index illustrated
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+PaperRank-Hirsch
+\end_layout
+
+\begin_layout Subsection
+CoRank
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Ranks the more established papers more weight over than older papers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+CoRank-LinkCount
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename corank-linkcount.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Network of Co-Cited publications from publication n
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Betweenness centrality
+\end_layout
+
+\begin_layout Subsection
+Closeness centrality
 \end_layout
 
 \begin_layout Section
@@ -805,7 +642,8 @@ key "key-1"
 
 \end_inset
 
-asdfddds
+DAVID C TARRANT (2011) "A Study of Early Indication Citation Metrics ",
+ University of Southampton, Electronics and Computer Science, PhD Thesis.
 \end_layout
 
 \begin_layout Standard
