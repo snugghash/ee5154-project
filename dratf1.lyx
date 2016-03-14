@@ -1,5 +1,5 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass IEEEtran
@@ -17,19 +17,19 @@
 \font_roman default
 \font_sans default
 \font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
-
 \graphics default
 \default_output_format default
 \output_sync 0
 \bibtex_command bibtex
 \index_command default
-\float_placement tbh
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref true
@@ -47,15 +47,24 @@
 \pdf_quoted_options "pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
 \papersize default
 \use_geometry false
-\use_amsmath 1
-\use_esint 0
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 0
 \index Index
 \shortcut idx
@@ -179,7 +188,7 @@ status collapsed
 
 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -188,6 +197,10 @@ status collapsed
 IEEEauthorblockA{
 \end_layout
 
+\end_inset
+
+CH12B026
+\begin_inset Newline newline
 \end_inset
 
 Indian Institute of Technology Madras
@@ -253,6 +266,10 @@ status collapsed
 IEEEauthorblockA{
 \end_layout
 
+\end_inset
+
+EE12B030
+\begin_inset Newline newline
 \end_inset
 
 Indian Institute of Technology Madras
@@ -388,8 +405,8 @@ PaperRank
 \end_layout
 
 \begin_layout Standard
-The PageRank algorithm has the problem of nodes with no inbound edges causing
- it to have no solution.
+The PageRank algorithm, when applied to citation networks, has the problem
+ of nodes with no inbound edges causing it to have no solution.
  To solve this problem the algorithm is modified to assign rank of 1 to
  all initial nodes and reset it to zero after computation.
 \begin_inset CommandInset citation
@@ -431,12 +448,12 @@ status open
 \align center
 \begin_inset Graphics
 	filename hindex.png
-	scale 90
+	scale 80
 
 \end_inset
 
 
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 h-index illustrated
@@ -482,6 +499,13 @@ This is a proposed alternative to h-index which uses the calculated PaperRanks.
 \end_inset
 
 .
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-2"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -502,9 +526,16 @@ Ranks the more established papers more weight over than older papers.
 \end_layout
 
 \begin_layout Standard
-The CoRank algorithm, shown by Equation 5.1, is based upon the principals
- of the PageRank algorithm, as such it is simply a variation of PageRank
- algorithm where the input data has changed rather than the algorithm itself.
+The CoRank algorithm
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+
+\end_inset
+
+, shown by equation, is based upon the principals of the PageRank algorithm,
+ as such it is simply a variation of PageRank algorithm where the input
+ data has changed rather than the algorithm itself.
  The key difference is that in CoRank, the rank gained from each co-cited
  publication is the CoRank of that paper CR(p
 \begin_inset Formula $_{j}$
@@ -561,7 +592,7 @@ status open
 \end_inset
 
 
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Network of Co-Cited publications from publication n
@@ -585,7 +616,7 @@ key "key-1"
 \end_layout
 
 \begin_layout Subsection
-Betweeness centrality
+Betweeness centrality on co-authorship networks
 \end_layout
 
 \begin_layout Standard
@@ -597,6 +628,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename 600px-Graph_betweenness.svg.png
+	scale 35
 
 \end_inset
 
@@ -604,7 +636,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Hue (from red = 0 to blue = max) shows the node betweenness.
@@ -652,14 +684,27 @@ Betweenness centrality is based on the number of shortest paths passing
 
 \begin_layout Standard
 In social networks, vertices with high betweenness are the brokers and connector
-s who bring others together (Yin et al., 2006).
+s who bring others together 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-4"
+
+\end_inset
+
+.
  Being between means that a vertex has the ability to control the flow of
  knowledge between most others.
  Individuals with high betweenness are the pivots in the network knowledge
  flowing.
  The vertices with highest betweenness also result in the largest increase
  in typical distance between others when they are removed.
- 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -667,11 +712,24 @@ Closeness centrality on co-authorship networks
 \end_layout
 
 \begin_layout Standard
-Closeness centrality (Freeman, 1979) emphasizes the distance of a vertex
- to all others in the network through the geodesic distance from each vertex
- to all others.
+Closeness centrality 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-5"
+
+\end_inset
+
+ emphasizes the distance of a vertex to all others in the network through
+ the geodesic distance from each vertex to all others.
  It is a measure of how long it will take for information to spread from
- a particular node (Yin et al., 2006).
+ a particular node 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-4"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -703,6 +761,58 @@ Where
 \end_inset
 
  is the closeness centrality.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Group centrality measures
+\end_layout
+
+\begin_layout Standard
+According to 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-7"
+
+\end_inset
+
+, the degree centrality of a group is the number of actors outside the group
+ that are connected to the member of that group.
+ Different ties to the same actors by different group members are only counted
+ once.
+ The formula is described below: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+Group\,degree\,centrality & = & |N(C)|\\
+Normalized\,group\,degree\,centrality & = & \frac{|N(C)|}{|V|-|C|}
+\end{eqnarray*}
+
+\end_inset
+
+Where C is a group that is a subset of the set of vertices V, and N(C) denotes
+ the set of all nodes that are not in C but connected to a member of C.
+\end_layout
+
+\begin_layout Standard
+Similarly group closeness and betweeness centralities are explored in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-6,key-7"
+
+\end_inset
+
+.
+ These measures help us analyse the interdisciplinary nature of disciplines.
+ 
 \end_layout
 
 \begin_layout Bibliography
@@ -752,8 +862,67 @@ target "http://arxiv.org/pdf/1012.4862.pdf"
  
 \end_layout
 
-\begin_layout Standard
-bla bla
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+Yin, L., Kretschmer, H., Hanneman, R.
+ A., & Liu, Z.
+ (2006).
+ Connection and stratification in research collaboration: An analysis of
+ the COLLNET network.
+ Information Processing and Management, 42 , 1599- 1613
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+Freeman, L.C.
+ (1979).
+ Centra lity in social networks.
+ Conceptual clarification.
+ Social Networks, 1 , 215-239
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-6"
+
+\end_inset
+
+Chaoqun Ni, Cassidy R.
+ Sugimoto, and Jiepu Jiang.
+ Degree, Closeness, and Betweenness: Application of group centrality measurement
+s to explore macro - disciplinary evolution diachronically
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-7"
+
+\end_inset
+
+Everett, M.
+ G., & Borgatti, S.
+ P.
+ (20 05).
+ Extending centrality.
+ In P.
+ J.
+ Carrington, J.
+ Scott & S.
+ Wasserman (Eds.), Models and methods in social network analysis (pp.
+ 57 - 76).
+ New York: Cambridge University Press.
 \end_layout
 
 \begin_layout Standard

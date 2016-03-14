@@ -1,0 +1,240 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[twocolumn,conference]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{pdftitle={Your Title},
+ pdfauthor={Your Name},
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% for subfigures/subtables
+\usepackage[caption=false,font=footnotesize]{subfig}
+
+\makeatother
+
+\begin{document}
+
+
+
+
+
+\title{Exploring metrics of analyzing citation networks }
+
+
+\author{\IEEEauthorblockN{Suhas~Gundimeda}\IEEEauthorblockA{Indian Institute
+of Technology Madras}\and \IEEEauthorblockN{Karnaty~Rohit Reddy}\IEEEauthorblockA{Indian
+Institute of Technology Madras}}
+
+
+\IEEEspecialpapernotice{Invited Paper}
+
+
+\IEEEaftertitletext{after title text like dedication}
+\maketitle
+\begin{abstract}
+We describe some measures and metrics proposed by various papers in
+scientometrics to analyze citation and co-citation networks.
+\end{abstract}
+
+
+\IEEEpeerreviewmaketitle{}
+
+
+\section{Introduction}
+
+Scientometrics deals with the measuring and analysing science, technology
+and innovation.  In this paper we look into analysis of scientific
+contributions in peer-reviewed publications using their citation,
+co-citation and co-authorship networks.
+
+
+\section{Previous Work}
+
+
+
+
+
+
+\subsection{Citation count}
+
+Citation count is the sum of all published citations to a scientific
+paper. This is the most widely used measure of impact, and is the
+standard metric against which all of the others are compared.
+
+
+\subsection{PaperRank}
+
+The PageRank algorithm has the problem of nodes with no inbound edges
+causing it to have no solution. To solve this problem the algorithm
+is modified to assign rank of 1 to all initial nodes and reset it
+to zero after computation.\cite{key-2}
+
+
+\subsection{h-index}
+
+An author metric whose value is the maximal number $h$ such that
+the author has at least $h$ papers with at least $h$ citations.
+
+\begin{figure}[H]
+\centering{}\includegraphics[scale=0.9]{hindex}\caption{h-index illustrated}
+\end{figure}
+
+
+
+\subsection{PaperRank-Hirsch index}
+
+This is a proposed alternative to h-index which uses the calculated
+PaperRanks. The PaperRanks are normalized to represent more meaningful
+quantities, namely the most probable number of citations which the
+node might receive, the $Q$-value. The index is then defined as the
+integer number $h$ such that an author has at least $h$ papers with
+$Q$-value greater than or equal to $h$.\cite{key-2}
+
+
+\subsection{CoRank}
+
+
+
+The CoRank algorithm\cite{key-1}, shown by equation, is based upon
+the principals of the PageRank algorithm, as such it is simply a variation
+of PageRank algorithm where the input data has changed rather than
+the algorithm itself. The key difference is that in CoRank, the rank
+gained from each co-cited publication is the CoRank of that paper
+CR(p$_{j}$) divided by the number of co-citations (Co-Links) CL(p$_{j}$)
+that paper has with other papers
+
+\begin{center}
+$CR(n)=\frac{1-\alpha}{|V|}+\alpha\underset{p_{j}\in M(p_{i})}{\Sigma}\frac{CR(p_{j})}{CL(p_{j})}$
+\par\end{center}
+
+
+\subsubsection{CoRank-LinkCount}
+
+CoRank-LinkCount is an algorithm without a weighting factor, meaning
+that iterative calculation is not required. CoRank-LinkCount looks
+solely at the number of citations which are received, not by the publication
+in question, but by all the publications with which the subject paper
+is co-cited.
+
+Figure 2 shows how the sum of co-citing publications is worked out.
+Publication n represents the target publication and each p being the
+co-cited publication; each publication marked c is thus a directly
+citing publication to n. The total CoRankLinkCount is the sum of all
+citations towards those papers (p) a publication (n) is co-cited with,
+including duplicates and c itself
+
+\begin{figure}[H]
+\centering{}\includegraphics[scale=0.7]{corank-linkcount}\caption{Network of Co-Cited publications from publication n\cite{key-1}}
+\end{figure}
+
+
+
+\subsection{Betweeness centrality}
+
+\begin{figure}[H]
+\includegraphics[scale=0.4]{600px-Graph_betweenness\lyxdot svg}
+
+\caption{Hue (from red = 0 to blue = max) shows the node betweenness.}
+
+
+\end{figure}
+
+
+Betweenness centrality is based on the number of shortest paths passing
+through a vertex. Vertices with a high betweenness play the role of
+connecting different groups. In the following formula, g$_{jik}$
+is all geodesics linking node j and node k which pass through node
+i. g$_{jk}$ is the geodesic distance between the vertices of j and
+k. 
+
+\begin{center}
+$C_{B}(n_{i})=\underset{j,k\neq i}{\Sigma}\frac{g_{jik}}{g_{jk}}$ 
+\par\end{center}
+
+In social networks, vertices with high betweenness are the brokers
+and connectors who bring others together \cite{key-4}. Being between
+means that a vertex has the ability to control the flow of knowledge
+between most others. Individuals with high betweenness are the pivots
+in the network knowledge flowing. The vertices with highest betweenness
+also result in the largest increase in typical distance between others
+when they are removed.\cite{key-3}
+
+
+\subsection{Closeness centrality on co-authorship networks}
+
+Closeness centrality \cite{key-5} emphasizes the distance of a vertex
+to all others in the network through the geodesic distance from each
+vertex to all others. It is a measure of how long it will take for
+information to spread from a particular node \cite{key-4}.
+
+\[
+C_{c}(n_{t})=\sum_{i=1}^{N}\frac{1}{d(n_{i},n_{j})}
+\]
+
+
+Where $d(n_{i},n_{j})$ is the distance from node $i$ to node $j$
+and $C_{c}$ is the closeness centrality.\cite{key-3}
+
+
+\subsection{Group centrality measures}
+
+According to \cite{key-7}, the degree centrality of a group is the
+number of actors outside the group that are connected to the member
+of that group. Different ties to the same actors by different group
+members are only counted once. The formula is described below: 
+
+\begin{eqnarray*}
+Group\,degree\,centrality & = & |N(C)|\\
+Normalized\,group\,degree\,centrality & = & \frac{|N(C)|}{|V|-|C|}
+\end{eqnarray*}
+Where C is a group that is a subset of the set of vertices V, and
+N(C) denotes the set of all nodes that are not in C but connected
+to a member of C.
+
+Similarly group closeness and betweeness centralities are explored
+in \cite{key-6,key-7}. These measures help us analyse the interdisciplinary
+nature of disciplines. 
+\begin{thebibliography}{1}
+\bibitem{key-1}DAVID C TARRANT (2011) \textquotedbl{}A Study of Early
+Indication Citation Metrics \textquotedbl{}, University of Southampton,
+Electronics and Computer Science, PhD Thesis.
+
+\bibitem{key-2}Mikalai Krapivin, Maurizio Marchese and Fabio Casati
+''Exploring and Understanding Scientific Metrics in Citation Networks''
+
+\bibitem{key-3}Erjia Yan, Ying Ding,\href{http://arxiv.org/pdf/1012.4862.pdf}{ \textquotedblleft Applying centrality measures to impact analysis: A coauthorship network analysis\textquotedblright} 
+
+\bibitem{key-4}Yin, L., Kretschmer, H., Hanneman, R. A., \& Liu,
+Z. (2006). Connection and stratification in research collaboration:
+An analysis of the COLLNET network. Information Processing and Management,
+42 , 1599- 1613
+
+\bibitem{key-5}Freeman, L.C. (1979). Centra lity in social networks.
+Conceptual clarification. Social Networks, 1 , 215-239
+
+\bibitem{key-6}Chaoqun Ni, Cassidy R. Sugimoto, and Jiepu Jiang.
+Degree, Closeness, and Betweenness: Application of group centrality
+measurements to explore macro - disciplinary evolution diachronically
+
+\bibitem{key-7}Everett, M. G., \& Borgatti, S. P. (20 05). Extending
+centrality. In P. J. Carrington, J. Scott \& S. Wasserman (Eds.),
+Models and methods in social network analysis (pp. 57 - 76). New York:
+Cambridge University Press.
+
+\end{thebibliography}
+$ $
+\end{document}
