@@ -1,5 +1,5 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
 \textclass IEEEtran
@@ -17,13 +17,13 @@
 \font_roman default
 \font_sans default
 \font_typewriter default
-\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -47,24 +47,15 @@
 \pdf_quoted_options "pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
 \papersize default
 \use_geometry false
-\use_package amsmath 1
-\use_package amssymb 1
-\use_package cancel 0
-\use_package esint 0
-\use_package mathdots 1
-\use_package mathtools 0
-\use_package mhchem 1
-\use_package stackrel 0
-\use_package stmaryrd 0
-\use_package undertilde 0
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
-\cite_engine_type default
-\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
 \use_refstyle 0
 \index Index
 \shortcut idx
@@ -159,25 +150,53 @@ the standard way:
 \end_inset
 
 
-\begin_inset Flex Author Name
-status open
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
+
+
+\backslash
+IEEEauthorblockN{
+\end_layout
+
+\end_inset
+
 Suhas
 \begin_inset space ~
 \end_inset
 
 Gundimeda
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
 
 
-\begin_inset Flex Author Affiliation
-status open
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
+
+
+\backslash
+IEEEauthorblockA{
+\end_layout
+
+\end_inset
+
 Indian Institute of Technology Madras
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
@@ -196,25 +215,53 @@ and
 \end_inset
 
 
-\begin_inset Flex Author Name
-status open
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
+
+
+\backslash
+IEEEauthorblockN{
+\end_layout
+
+\end_inset
+
 Karnaty
 \begin_inset space ~
 \end_inset
 
 Rohit Reddy
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
 
 
-\begin_inset Flex Author Affiliation
-status open
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
+
+
+\backslash
+IEEEauthorblockA{
+\end_layout
+
+\end_inset
+
 Indian Institute of Technology Madras
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
@@ -322,6 +369,10 @@ Something here about how many papers we reviewed and how many of them contained
 
 \end_layout
 
+\begin_layout Standard
+
+\end_layout
+
 \begin_layout Subsection
 Citation count
 \end_layout
@@ -385,7 +436,7 @@ status open
 \end_inset
 
 
-\begin_inset Caption Standard
+\begin_inset Caption
 
 \begin_layout Plain Layout
 h-index illustrated
@@ -450,8 +501,49 @@ Ranks the more established papers more weight over than older papers.
 
 \end_layout
 
+\begin_layout Standard
+The CoRank algorithm, shown by Equation 5.1, is based upon the principals
+ of the PageRank algorithm, as such it is simply a variation of PageRank
+ algorithm where the input data has changed rather than the algorithm itself.
+ The key difference is that in CoRank, the rank gained from each co-cited
+ publication is the CoRank of that paper CR(p
+\begin_inset Formula $_{j}$
+\end_inset
+
+) divided by the number of co-citations (Co-Links) CL(p
+\begin_inset Formula $_{j}$
+\end_inset
+
+) that paper has with other papers
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $CR(n)=\frac{1-\alpha}{|V|}+\alpha\underset{p_{j}\in M(p_{i})}{\Sigma}\frac{CR(p_{j})}{CL(p_{j})}$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 CoRank-LinkCount
+\end_layout
+
+\begin_layout Standard
+CoRank-LinkCount is an algorithm without a weighting factor, meaning that
+ iterative calculation is not required.
+ CoRank-LinkCount looks solely at the number of citations which are received,
+ not by the publication in question, but by all the publications with which
+ the subject paper is co-cited.
+\end_layout
+
+\begin_layout Standard
+Figure 2 shows how the sum of co-citing publications is worked out.
+ Publication n represents the target publication and each p being the co-cited
+ publication; each publication marked c is thus a directly citing publication
+ to n.
+ The total CoRankLinkCount is the sum of all citations towards those papers
+ (p) a publication (n) is co-cited with, including duplicates and c itself
 \end_layout
 
 \begin_layout Standard
@@ -469,7 +561,7 @@ status open
 \end_inset
 
 
-\begin_inset Caption Standard
+\begin_inset Caption
 
 \begin_layout Plain Layout
 Network of Co-Cited publications from publication n
@@ -494,6 +586,80 @@ key "key-1"
 
 \begin_layout Subsection
 Betweeness centrality
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename 600px-Graph_betweenness.svg.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Hue (from red = 0 to blue = max) shows the node betweenness.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Betweenness centrality is based on the number of shortest paths passing
+ through a vertex.
+ Vertices with a high betweenness play the role of connecting different
+ groups.
+ In the following formula, g
+\begin_inset Formula $_{jik}$
+\end_inset
+
+ is all geodesics linking node j and node k which pass through node i.
+ g
+\begin_inset Formula $_{jk}$
+\end_inset
+
+ is the geodesic distance between the vertices of j and k.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $C_{B}(n_{i})=\underset{j,k\neq i}{\Sigma}\frac{g_{jik}}{g_{jk}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+In social networks, vertices with high betweenness are the brokers and connector
+s who bring others together (Yin et al., 2006).
+ Being between means that a vertex has the ability to control the flow of
+ knowledge between most others.
+ Individuals with high betweenness are the pivots in the network knowledge
+ flowing.
+ The vertices with highest betweenness also result in the largest increase
+ in typical distance between others when they are removed.
+ 
 \end_layout
 
 \begin_layout Subsection
