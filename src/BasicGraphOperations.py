@@ -30,6 +30,7 @@ def findTriangles(G):
 Reads network graph from Arnetminer dataset
 """
 def readArnetminerGraph(path, delimiter=" ", directed=True, weighted=False, skip=0):
+    x=0
     fileHandle = open(path, 'r');
     for i in range(1,skip+1):
         fileHandle.readline()
@@ -37,8 +38,12 @@ def readArnetminerGraph(path, delimiter=" ", directed=True, weighted=False, skip
     # TODO using dictionary for lineType
     for line in fileHandle.readlines():
         lineType = line[1]
+        print(lineType)
         if lineType=='*':
             title = line[2:-1]
+            x+=1
+            print(x)
+            print(title)
         elif lineType=='@':
             authors = line[2:-1]
         elif lineType=='t':
